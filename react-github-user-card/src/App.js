@@ -1,26 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
+import CardList from './components/CardList';
 import './App.css';
 
-function App() {
+
+class App extends React.Component{
+  constructor(){
+    super();
+    this.state = {
+    list : [
+      {
+        login: 'web25', 
+        name: 'mo', 
+        location: 'yo', 
+        bio: 'so', 
+        avatar_url: 'https://avatars3.githubusercontent.com/u/55991707?v=4'
+
+      }
+    ]
+    }
+  }
+  //end of constructor
+ 
+
+  render(){
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+       <h1>GitHub Pals</h1>
       </header>
+      <CardList list={this.state.list}/>
     </div>
   );
 }
-
+}
 export default App;
+
+
