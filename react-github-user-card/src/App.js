@@ -10,9 +10,9 @@ class App extends React.Component{
     list : [
       {
         login: 'web25', 
-        name: 'mo', 
-        location: 'yo', 
-        bio: 'so', 
+        name: 'test-name', 
+        location: 'test-location', 
+        bio: 'test-bio', 
         avatar_url: 'https://avatars3.githubusercontent.com/u/55991707?v=4'
 
       }
