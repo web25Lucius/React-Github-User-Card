@@ -1,38 +1,34 @@
 import React from 'react';
 import CardList from './components/CardList';
+import axios from 'axios';
 import './App.css';
 
 
-class App extends React.Component{
+export default class App extends React.Component{
   constructor(){
     super();
-    this.state = {
-    list : [
-      {
-        login: 'web25', 
-        name: 'mo', 
-        location: 'yo', 
-        bio: 'so', 
-        avatar_url: 'https://avatars3.githubusercontent.com/u/55991707?v=4'
+    this.state.list = {
+      
+    };
+     axios.get('https://api.github.com/users/web25Lucius/followers')
+    .then(response=>{
+      console.log(response.data)
+      this.list.push(response.data);
+    })
+    .catch(error=> {
+      console.log(error)
+    })
 
-      }
-    ]
-    }
-  }
-  //end of constructor
  
-
-  render(){
+  }
+  render()
+  {
   return (
     <div className="App">
       <header className="App-header">
        <h1>GitHub Pals</h1>
       </header>
-      <CardList list={this.state.list}/>
+      <CardList list={this.list}></CardList>
     </div>
-  );
-}
-}
-export default App;
-
-
+  )} 
+};
