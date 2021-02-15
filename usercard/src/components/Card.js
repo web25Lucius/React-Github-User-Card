@@ -1,14 +1,16 @@
 import React from 'react'; 
 
 class Card extends React.Component{
+
     render(){
+        const {avatar_url, login, url, repos_url} = this.props;
         return(
-            <div>
-              avatar_url (img source for profile pic)
-              login (name for username)
-              url (profile)
-              repos_url (their work)
-            </div>
+            <section>
+            <img src={avatar_url} alt={avatar_url} />
+             <h3>{login}</h3>
+             <h4>{url}</h4>
+             <h4>{repos_url}</h4>
+            </section>
         )
     }
 }
